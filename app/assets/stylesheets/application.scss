@@ -15,3 +15,35 @@
  */
 
 
+/* background */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+  /* 画像 */
+  background-image: url("/images/fireworks.jpg");
+  background-size: 100% auto;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  /* 背景透過 */
+/*  background-color: rgba(255,255,255,0.3);
+  background-blend-mode: lighten;
+*/
+  /*font-family: 'Hiragino Kaku Gothic', Avenir, Corbel, Osaka, sans-serif;*/
+}
+
+
+
+
+
+/* スマートフォンサイズ(425px)以下の大きさの場合 */
+@media screen and (max-width:425px) {
+
+  * {
+    background-size: auto 100vh;
+  }
+
+}
