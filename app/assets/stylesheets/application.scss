@@ -1,18 +1,4 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+@import "homes.scss";
 
 
 /* background */
@@ -29,11 +15,102 @@
   background-attachment: fixed;
 
   /* 背景透過 */
-/*  background-color: rgba(255,255,255,0.3);
-  background-blend-mode: lighten;
-*/
-  /*font-family: 'Hiragino Kaku Gothic', Avenir, Corbel, Osaka, sans-serif;*/
+  background-color: rgba(0,0,0,0.6);
+  background-blend-mode: color;
+
+  color: #FFFFFF;
+  font-family: 'Hiragino Kaku Gothic', Avenir, Corbel, Osaka, sans-serif;
 }
+
+.top-container {
+  width: 100%;
+}
+
+.top-box {
+  width: 537px;
+  height: 100vh;
+  margin: 0 auto;
+}
+
+.top-img {
+  width: 537px;
+  margin: calc((100vh - 430px)/2) auto;
+}
+
+.top-opacity {
+  background-color: rgba(255,255,255,0.0);
+  background-blend-mode: lighten;
+}
+
+.second-container {
+  width: 1000px;
+  height: 100vh;
+  margin: 0 auto;
+}
+
+
+.about-container {
+  width: 1000px;
+  margin: 0 auto;
+  padding: 30px 0 120px;
+}
+
+.about-title {
+  font-size: 36px;
+  text-align: center;
+  letter-spacing: 0.3em;
+  margin: 40px;
+}
+
+.about-text {
+  font-size: 17px;
+  letter-spacing: 0.1em;
+  line-height: 2.2em;
+  text-align: center;
+}
+
+  .about-subtext {
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    line-height: 2.2em;
+    text-align: center;
+  }
+
+  .about-subtext a:hover {
+
+  }
+
+  .about-box {
+    border: double 3px #AAA;
+    width: 780px;
+    margin: 50px auto;
+  }
+
+  .about-box-title {
+    font-size: 34px;
+    text-align: center;
+    margin: 50px 0 20px;
+  }
+
+  .about-box-text {
+    font-size: 17px;
+    margin-left: 150px;
+    line-height: 2em;
+  }
+
+  .about-box-text-sub {
+    font-size: 14px;
+    margin-left: 190px;
+    margin-bottom: 60px;
+    line-height: 2em;
+  }
+
+  .about-img {
+    width: 780px;
+    height: auto;
+    margin: 0 auto;
+  }
+
 
 
 
@@ -45,5 +122,21 @@
   * {
     background-size: auto 100vh;
   }
+
+  .top-container {
+    width: 100vw;
+  }
+
+  .top-box {
+    width: 100vw;
+    height: auto;
+  }
+
+  .top-img {
+    width: 100vw;
+    margin: 300px auto;
+  }
+
+
 
 }
