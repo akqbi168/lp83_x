@@ -22,13 +22,133 @@
   font-family: 'Hiragino Kaku Gothic', Avenir, Corbel, Osaka, sans-serif;
 }
 
+a {
+  text-decoration: none;
+}
+
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.blk-opc {
+  background-color: rgba(0,0,0,0.6);
+  background-blend-mode: color;
+  display: inline-block;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+h2 {
+    font-size: 36px;
+    font-weight: 400;
+    letter-spacing: 0.3em;
+    text-align: center;
+    position: relative;
+  }
+
+h2:before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -30px; /*下線の上下位置調整*/
+  /*display: inline-block;*/
+  width: 50px; /*下線の幅*/
+  height: 1px; /*下線の太さ*/
+  -moz-transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translate(-50%); /*位置調整*/
+  background-color: #CCC; /*下線の色*/
+  border-radius: 40%;
+}
+
+h4 {
+  font-weight: 400;
+}
+
+#title {
+  margin: 70px auto;
+  padding-top: 100px;
+}
+
+
+
+/* header */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 66px;
+  padding: 0 calc((100vw - 1100px) / 2);
+  justify-content: center;
+  position: relative;
+  /*background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0) 100%);*/
+  background-color: rgba(0,0,0,1.0);
+  /*background-blend-mode: normal;*/
+  clear: both;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.header-left {
+  float: left;
+  padding-top: 30px;
+}
+
+.logo-top {
+  width: 110px;
+  background-color: rgba(0,0,0,1.0);
+}
+
+.header-center {
+  float: right;
+  margin-top: 42px;
+  letter-spacing: 0.28em;
+  font-size: 15px;
+}
+
+.header-center .header-box {
+  float: left;
+  border-right: 1px solid #FFF;
+  padding: 0 1.5em;
+  background-color: rgba(0,0,0,1.0);
+}
+.header-center .header-box:last-child {
+  border-right: none;
+}
+
+.header-center-text {
+}
+
+.gradient-bar {
+  width: 100%;
+  height: 8px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(128, 128, 128, 0.1) 100%);
+  background-blend-mode: lighten;
+  position: fixed;
+  top: 66px;
+  left: 0;
+  z-index: 100;
+}
+
+
+
+/* top */
 .top-container {
   width: 100%;
+  background-color: rgba(0,0,0,0.6);
+  background-blend-mode: hard-light;
 }
 
 .top-box {
   width: 537px;
-  height: 100vh;
   margin: 0 auto;
 }
 
@@ -39,27 +159,19 @@
 
 .top-opacity {
   background-color: rgba(255,255,255,0.0);
-  background-blend-mode: lighten;
-}
-
-.second-container {
-  width: 1000px;
-  height: 100vh;
-  margin: 0 auto;
+  /*background-blend-mode: lighten;*/
 }
 
 
+
+/* about */
 .about-container {
   width: 1000px;
   margin: 0 auto;
-  padding: 30px 0 120px;
+  /*padding: 0px 0 60px;*/
 }
 
 .about-title {
-  font-size: 36px;
-  text-align: center;
-  letter-spacing: 0.3em;
-  margin: 40px;
 }
 
 .about-text {
@@ -69,47 +181,73 @@
   text-align: center;
 }
 
-  .about-subtext {
-    font-size: 14px;
-    letter-spacing: 0.1em;
-    line-height: 2.2em;
-    text-align: center;
-  }
+.about-subtext {
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  line-height: 2.2em;
+  text-align: center;
+}
 
-  .about-subtext a:hover {
+.about-box {
+  border: double 3px #AAA;
+  width: 780px;
+  margin: 50px auto;
+}
 
-  }
+.about-box-title {
+  font-size: 36px;
+  letter-spacing: -0.04em;
+  text-align: center;
+  margin: 50px 0 20px;
+}
 
-  .about-box {
-    border: double 3px #AAA;
-    width: 780px;
-    margin: 50px auto;
-  }
+.about-box-text {
+  font-size: 17px;
+  margin-left: 150px;
+  line-height: 2em;
+}
 
-  .about-box-title {
-    font-size: 34px;
-    text-align: center;
-    margin: 50px 0 20px;
-  }
+.about-box-text-sub {
+  font-size: 14px;
+  margin-left: 190px;
+  margin-bottom: 60px;
+  line-height: 2em;
+}
 
-  .about-box-text {
-    font-size: 17px;
-    margin-left: 150px;
-    line-height: 2em;
-  }
+.about-img {
+  width: 780px;
+  margin: 0 auto;
+}
 
-  .about-box-text-sub {
-    font-size: 14px;
-    margin-left: 190px;
-    margin-bottom: 60px;
-    line-height: 2em;
-  }
 
-  .about-img {
-    width: 780px;
-    height: auto;
-    margin: 0 auto;
-  }
+
+/* news */
+.news-container {
+  width: 1000px;
+  height: 1000px;
+  margin: 0 auto;
+  /*padding: 66px 0 120px;*/
+}
+
+.news-title {
+}
+
+
+
+
+
+
+
+
+/* FOOD&DRINK */
+
+.fd-img {
+  width: 980px;
+  display: block;
+  margin: 0 auto;
+}
+
+
 
 
 
