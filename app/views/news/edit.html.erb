@@ -1,0 +1,23 @@
+<div class="create-news">
+  <h1>新規投稿（ニュース）</h1>
+  <!-- form_for部分 -->
+  <%#= form_for @news, :url => {controller: "news", action: "new"} do |f| %>
+  <%= form_for @news do |f| %>
+
+    <h4>日付</h4>
+    <%#= date_field_tag :date %>
+    <%= f.number_field :year, class: "create-news-date" %>年　
+    <%= f.number_field :month, class: "create-news-date" %>月　
+    <%= f.number_field :date, class: "create-news-date" %>日
+
+    <h4>タイトル</h4>
+    <%= f.text_area :title, class: "create-news-title" %>
+
+    <h4>公開非公開</h4>
+    <%= f.select :published, {'公開': 1, '下書き': 0}, {include_blank: ''}, { class: '' , required: true } %>
+
+    <%= f.submit '更新' %>
+
+  <% end %>
+
+</div>
