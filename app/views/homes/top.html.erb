@@ -10,7 +10,7 @@
   </div>
 
 
-  <!-- <div class="about-container"> -->
+
   <div class="about-container" id="about">
     <h2 id="title" class="about-title">
       ABOUT
@@ -23,9 +23,7 @@
     </p>
     <p class="about-subtext">
       ※横浜スパークリングトワイライトの詳しい情報は公式HPよりご覧ください。<br>
-      <span style="text-decoration: underline">
-        <%= link_to 'https://yokohama-sparkling.com/', 'https://yokohama-sparkling.com/', class: 'blk-opc underline' %>
-      </span>
+      <%= link_to 'https://yokohama-sparkling.com/', 'https://yokohama-sparkling.com/', class: 'blk-opc underline' %>
     </p>
 
     <div class="about-box">
@@ -47,35 +45,204 @@
   </div>
 
 
+
   <div class="news-container" id="news">
     <h2 id="title" class="news-title">
       NEWS
     </h2>
+
+    <% @newsall.each do |news| %>
+      <div class="news-box">
+        <span class="news-text-date blk-opc">
+          <%= news.year %>.<%= news.month %>.<%= news.date %>
+        </span>
+        <span class="news-text-title blk-opc">
+          <%= news.title %>
+        </span>
+      </div>
+    <% end %>
   </div>
 
 
-  <div class="cast-container" id="cast" style="height: 1000px">
+
+  <div class="cast-container" id="cast">
     <h2 id="title" class="cast-title">
       CAST
     </h2>
+
+    <p class="cast-tag">
+      ARTIST
+    </p>
+
+    <div class="clearfix">
+      <% @partners.where(tag_id: 1).each do |p| %>
+        <div class="cast-box">
+          <div class="cast-image">
+            <%= link_to p.link do %>
+              <%= attachment_image_tag p, :partner_image, format: 'jpeg', fallback: "", class: "cast-image" %>
+              <%#= attachment_image_tag p, :partner_image, format: 'jpeg', fallback: "", size: "480x228", class: "" %>
+            <% end %>
+          </div>
+          <div class="cast-name">
+            <%= p.name %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+    <p class="kana-order">
+      ※50音順
+    </p>
+
+    <p class="cast-tag">
+      DJ
+    </p>
+
+    <div class="clearfix">
+      <% @partners.where(tag_id: 2).each do |p| %>
+        <div class="cast-box">
+          <div class="cast-image">
+            <%= link_to p.link do %>
+              <%= attachment_image_tag p, :partner_image, format: 'jpeg', fallback: "", class: "cast-image" %>
+              <%#= attachment_image_tag p, :partner_image, format: 'jpeg', fallback: "", size: "480x228", class: "" %>
+            <% end %>
+          </div>
+          <div class="cast-name">
+            <%= p.name %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+    <p class="kana-order">
+      ※50音順
+    </p>
+
+    <p class="cast-tag">
+      ART
+    </p>
+
+    <div class="clearfix">
+      <% @partners.where(tag_id: 3).each do |p| %>
+        <div class="cast-box">
+          <div class="cast-image">
+            <%= link_to p.link do %>
+              <%= attachment_image_tag p, :partner_image, format: 'jpeg', fallback: "", class: "cast-image" %>
+              <%#= attachment_image_tag p, :partner_image, format: 'jpeg', fallback: "", size: "480x228", class: "" %>
+            <% end %>
+          </div>
+          <div class="cast-name">
+            <%= p.name %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+    <p class="kana-order">
+      ※50音順
+    </p>
+
+    <p class="cast-tag">
+      PERFORMERS
+    </p>
+
+    <div class="clearfix">
+      <% @partners.where(tag_id: 4).each do |p| %>
+        <div class="cast-box">
+          <div class="cast-image">
+            <%= link_to p.link do %>
+              <%= attachment_image_tag p, :partner_image, format: 'jpeg', fallback: "", class: "cast-image" %>
+              <%#= attachment_image_tag p, :partner_image, format: 'jpeg', fallback: "", size: "480x228", class: "" %>
+            <% end %>
+          </div>
+          <div class="cast-name">
+            <%= p.name %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+    <p class="kana-order">
+      ※50音順
+    </p>
+
   </div>
 
 
-  <div class="fooddrink-container" id="fooddrink" style="height: 1000px">
+
+  <div class="fooddrink-container" id="fooddrink">
     <h2 id="title" class="fooddrink-title">
       FOOD&DRINK
     </h2>
 
     <img src="images/img-food.jpg" alt="title" class="fd-img">
 
+    <p class="kana-order">
+      ※VIP席、指定席のお客様のFOOD & DRINKのイメージです
+    </p>
+
+    <p class="cast-tag">
+      TIE UP
+    </p>
+
+    <div class="clearfix">
+      <% @partners.where(tag_id: 5).each do |p| %>
+        <div class="cast-box">
+          <div class="cast-image">
+            <%#= link_to p.link do %>
+              <%= attachment_image_tag p, :partner_image, format: 'jpeg', fallback: "", class: "cast-image" %>
+              <%#= attachment_image_tag p, :partner_image, format: 'jpeg', fallback: "", size: "480x228", class: "" %>
+            <%# end %>
+          </div>
+          <div class="cast-name">
+            <%= p.name %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+    <p class="kana-order">
+      ※アルファベット順
+    </p>
+    <p class="kana-order">
+      ※VIP席、指定席のお客様のFOOD & DRINKのイメージです
+    </p>
+
   </div>
+
 
 
   <div class="ticket-container" id="ticket" style="height: 1000px">
     <h2 id="title" class="ticket-title">
       TICKET
     </h2>
+
+    <p class="cast-tag">
+      CONTACT
+    </p>
+    <p class="about-text" style="margin-bottom: 40px">
+      連日たくさんのお問い合わせいただいております。<br>
+      以下のフォームよりお気軽にご連絡ください。
+    </p>
+
+  <%#= form_for @partner do |f| %>
+
+  <div style="width: 500px; height:500px; margin:0 auto">
+    <h4>お名前</h4>
+    <%#= f.text_field :link, style: "width:500px" %>
+
+    <br><br>
+    <h4>お問い合わせ内容</h4>
+    <%#= f.text_area :name, style: "width:500px; height: 200px" %>
+
+    <br><br>
+    <%#= f.submit '送信' %>
   </div>
+  <%# end %>
+
+
+  </div>
+
 
 
   <div class="access-container" id="access" style="height: 1000px">
@@ -83,6 +250,7 @@
       ACCESS
     </h2>
   </div>
+
 
 
   <div class="report-container" id="report" style="height: 1000px">

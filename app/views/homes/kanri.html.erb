@@ -1,0 +1,71 @@
+<h1 style="font-size: 50px; text-align: center; margin-top: 100px">【管理画面】</h1>
+
+  <div class="news-container" id="news">
+    <h2 id="title" class="news-title">
+      ＮＥＷＳ（管理画面）
+    </h2>
+
+    <%= button_to "NEWS新規作成", {controller: 'homes', action: 'new'}, {method: :get, class: "create-link"} %>
+
+    <% @newsall.each do |news| %>
+      <div class="news-box">
+        <span class="news-text-date blk-opc">
+          <%= news.year %>.<%= news.month %>.<%= news.date %>
+        </span>
+        <span class="news-text-title blk-opc">
+          <%= news.title %>
+        </span><br>
+        <span class="news-text-date blk-opc">
+          <%#= news.published %>
+          <% if news.published == true %>
+            <span class="published blk-opc">公開中</span>
+          <% elsif news.published == false %>
+            <span class="draft blk-opc">下書き</span>
+          <% end %>
+        </span>
+        <span class="news-text-edit blk-opc">
+          <%= link_to "[編集]", edit_news_path(news.id), class: "blk-opc" %>
+        </span>
+        <span class="news-text-edit blk-opc">
+          <%= link_to "[削除]", news_path(news.id), method: :delete, data: {confirm: "注意：この操作は取り消せません。削除してよろしいですか？"}, class: "blk-opc" %>
+        </span>
+      </div>
+    <% end %>
+
+  </div>
+
+
+
+  <div class="news-container" id="news">
+    <h2 id="title" class="news-title">
+      ＰＡＲＴＮＥＲＳ（管理画面）
+    </h2>
+
+    <%= button_to "PARTNERS新規作成", {controller: 'homes', action: 'new'}, {method: :get, class: "create-link"} %>
+
+    <% @partnersall.each do |p| %>
+      <div class="kanri-p clearfix">
+        <%= attachment_image_tag p, :partner_image, format: 'jpeg', fallback: "", class: "kanri-p-image" %>
+        <div class="kanri-p-text blk-opc">
+          名前：　　<%= p.name %><br>
+          URL：　　<%= link_to p.link do %>
+                    <%= p.link %>
+                  <% end %><br>
+          タグ：　　<%= p.tag_id %><br>
+          状態：　　<span class="news-text-date blk-opc">
+                    <% if p.published == true %>
+                      <span class="published blk-opc">公開中</span>
+                    <% elsif p.published == false %>
+                      <span class="draft blk-opc">下書き</span>
+                    <% end %>
+                  </span><br>
+          操作：　　<%= link_to "[編集]", edit_partner_path(p.id), class: "blk-opc" %>
+          　　<%= link_to "[削除]", partner_path(p.id), method: :delete, data: {confirm: "注意：この操作は取り消せません。削除してよろしいですか？"}, class: "blk-opc" %>
+        </div>
+      </div>
+
+      <!-- <div class="news-box"> -->
+      <!-- </div> -->
+    <% end %>
+
+  </div>
